@@ -18,6 +18,8 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        working-directory: ./scripts
 
       - name: Run render script
-        run: node scripts/render-from-list.js
+        run: node render-from-list.js
+        working-directory: ./scripts
