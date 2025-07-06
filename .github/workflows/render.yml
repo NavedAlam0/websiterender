@@ -1,0 +1,23 @@
+name: Render Website Videos
+
+on:
+  workflow_dispatch:  # Allows you to trigger the action manually from the GitHub UI
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run render script
+        run: node scripts/render-from-list.js
