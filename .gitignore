@@ -1,21 +1,18 @@
-# dependencies
+# --- Node dependencies
 node_modules/
 **/node_modules/
 
-# Remotion builds
+# --- Front-end dev caches
+frontend/**/.vite/
+frontend/**/dist/
+frontend/**/.next/      # if you ever switch to Next.js
+
+# --- Remotion outputs & temp files
 remotion/**/out/
 remotion/**/props-*.json
 
-# frontend dev cache
-frontend/**/.vite/
-frontend/**/.next/
-frontend/**/dist/
-
-# logs
+# --- Logs & misc
+*.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# system
 .DS_Store
 .env
