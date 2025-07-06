@@ -16,10 +16,21 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install script deps
         run: npm ci
         working-directory: ./scripts
+
+      # 🔑 Install deps for the Remotion project
+      - name: Install Remotion deps
+        run: npm ci
+        working-directory: ./remotion/website-video-render
 
       - name: Run render script
         run: node render-from-list.js
         working-directory: ./scripts
+
+      - name: Upload rendered videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-mp4
+          path: remotion/website-video-render/out/*.mp4
