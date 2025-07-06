@@ -2,7 +2,7 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const urls = JSON.parse(fs.readFileSync('urls.json', 'utf8'));
+const urls = JSON.parse(fs.readFileSync('../urls.json', 'utf8'));
 const remotionDir = path.resolve(__dirname, '../remotion/website-video-render');
 
 urls.forEach((url, index) => {
